@@ -93,14 +93,23 @@ Title</string>
                                     <outlet property="title" destination="B2q-aQ-Aqe" id="USc-kT-WeT"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQ0-S1-vXJ">
+                                <rect key="frame" x="175" y="615" width="25" height="22"/>
+                                <state key="normal" image="down-chevron"/>
+                                <connections>
+                                    <action selector="downButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vbO-vb-mfS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ef7-Tr-xLb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1Ku-WD-HaW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KQ0-S1-vXJ" secondAttribute="bottom" constant="30" id="4MT-PO-CFb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="82M-ft-xwb" secondAttribute="bottom" constant="-66" id="5Md-JC-52C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Vd-72-PMr" secondAttribute="trailing" id="5xB-Vi-Fic"/>
                             <constraint firstItem="Ef7-Tr-xLb" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="B48-0j-Vbw"/>
                             <constraint firstItem="7Vd-72-PMr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HGN-nO-Q9K"/>
+                            <constraint firstItem="KQ0-S1-vXJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MRC-DF-9tb"/>
                             <constraint firstItem="7Vd-72-PMr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="RyA-jH-5VS"/>
                             <constraint firstAttribute="bottom" secondItem="7Vd-72-PMr" secondAttribute="bottom" id="VU5-v5-oLJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="B2q-aQ-Aqe" secondAttribute="top" constant="-66" id="VeB-Bg-plj"/>
@@ -121,6 +130,7 @@ Title</string>
         </scene>
     </scenes>
     <resources>
+        <image name="down-chevron" width="25" height="15"/>
         <image name="policy-1" width="563" height="1001"/>
         <image name="policy-2" width="563" height="1001"/>
     </resources>

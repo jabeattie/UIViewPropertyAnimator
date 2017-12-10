@@ -46,6 +46,20 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func downButtonTapped(_ sender: UIButton) {
+        panningBegan()
+        viewAnimator?.addCompletion({ (_) in
+            self.panGestureRecogniser?.isEnabled = true
+            switch self.state {
+            case .step1:
+                self.state = .step2
+            case .step2:
+                self.state = .step1
+            }
+        })
+        viewAnimator?.startAnimation()
+    }
+    
     @objc func handlePan(_ recognizer: UIPanGestureRecognizer) {
         
         let translation = recognizer.translation(in: self.view)
@@ -69,7 +83,7 @@ class ViewController: UIViewController {
         let step1Showing: Bool = state != .step1
         let step2Showing: Bool = state != .step2
         
-        viewAnimator = UIViewPropertyAnimator(duration: 0.6, dampingRatio: 0.75, animations: {
+        viewAnimator = UIViewPropertyAnimator(duration: 0.6, dampingRatio: 0.9, animations: {
             self.step1View.animate(showing: step1Showing)
             self.step2View.animate(showing: step2Showing)
         })
@@ -128,7 +142,7 @@ class ViewController: UIViewController {
         }
         
         let velocityVector = CGVector(dx: velocity.x / 100, dy: velocity.y / 100)
-        let springParameters = UISpringTimingParameters(dampingRatio: 0.75, initialVelocity: velocityVector)
+        let springParameters = UISpringTimingParameters(dampingRatio: 0.9, initialVelocity: velocityVector)
         viewAnimator?.continueAnimation(withTimingParameters: springParameters, durationFactor: 1.0)
     }
 
