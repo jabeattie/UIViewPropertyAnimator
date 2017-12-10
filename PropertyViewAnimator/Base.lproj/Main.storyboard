@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,42 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PropertyViewAnimator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="policy-2" translatesAutoresizingMaskIntoConstraints="NO" id="vof-06-lrt">
+                                <rect key="frame" x="0.0" y="-157" width="375" height="1001"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="policy-1" translatesAutoresizingMaskIntoConstraints="NO" id="CCn-ax-gQ0">
+                                <rect key="frame" x="0.0" y="-157" width="375" height="1001"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vof-06-lrt" secondAttribute="trailing" id="Ajo-BA-Ktv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CCn-ax-gQ0" secondAttribute="trailing" id="Ev2-8J-ocY"/>
+                            <constraint firstItem="CCn-ax-gQ0" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1.5" id="HBM-Ox-sdb"/>
+                            <constraint firstItem="vof-06-lrt" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="b5S-91-klM"/>
+                            <constraint firstItem="CCn-ax-gQ0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eaZ-bc-UDz"/>
+                            <constraint firstItem="CCn-ax-gQ0" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gKk-qj-x4N"/>
+                            <constraint firstItem="vof-06-lrt" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1.5" id="jFC-Gx-qyA"/>
+                            <constraint firstItem="vof-06-lrt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zRU-8f-buO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="step1ImageView" destination="CCn-ax-gQ0" id="IIB-Q6-fU4"/>
+                        <outlet property="step2ImageView" destination="vof-06-lrt" id="Y3z-Js-ibf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="policy-1" width="563" height="1001"/>
+        <image name="policy-2" width="563" height="1001"/>
+    </resources>
 </document>

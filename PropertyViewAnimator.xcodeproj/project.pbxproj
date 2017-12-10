@@ -14,6 +14,7 @@
 		4A8D9DA41FDD9A68001272F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A8D9DA21FDD9A68001272F6 /* LaunchScreen.storyboard */; };
 		4A8D9DAF1FDD9A68001272F6 /* PropertyViewAnimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D9DAE1FDD9A68001272F6 /* PropertyViewAnimatorTests.swift */; };
 		4A8D9DBA1FDD9A68001272F6 /* PropertyViewAnimatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D9DB91FDD9A68001272F6 /* PropertyViewAnimatorUITests.swift */; };
+		4A8D9DC81FDDD318001272F6 /* AnimatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D9DC71FDDD318001272F6 /* AnimatableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		4A8D9DB51FDD9A68001272F6 /* PropertyViewAnimatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PropertyViewAnimatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8D9DB91FDD9A68001272F6 /* PropertyViewAnimatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewAnimatorUITests.swift; sourceTree = "<group>"; };
 		4A8D9DBB1FDD9A68001272F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A8D9DC71FDDD318001272F6 /* AnimatableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				4A8D9DA01FDD9A68001272F6 /* Assets.xcassets */,
 				4A8D9DA21FDD9A68001272F6 /* LaunchScreen.storyboard */,
 				4A8D9DA51FDD9A68001272F6 /* Info.plist */,
+				4A8D9DC71FDDD318001272F6 /* AnimatableView.swift */,
 			);
 			path = PropertyViewAnimator;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A8D9DC81FDDD318001272F6 /* AnimatableView.swift in Sources */,
 				4A8D9D9C1FDD9A68001272F6 /* ViewController.swift in Sources */,
 				4A8D9D9A1FDD9A68001272F6 /* AppDelegate.swift in Sources */,
 			);
