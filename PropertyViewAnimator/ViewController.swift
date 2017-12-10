@@ -13,20 +13,23 @@ class ViewController: UIViewController {
     enum ViewState {
         case step1
         case step2
+        
+        var modifier: CGFloat {
+            switch self {
+            case .step1:
+                return -1
+            case .step2:
+                return 1
+            }
+        }
     }
-
     
-    @IBOutlet weak var step2ImageView: UIImageView!
-    @IBOutlet weak var step1ImageView: UIImageView!
+    @IBOutlet weak var step1View: AnimatableView!
+    @IBOutlet weak var step2View: AnimatableView!
     
     var state: ViewState = .step1
     var viewAnimator: UIViewPropertyAnimator?
     var panGestureRecogniser: UIPanGestureRecognizer?
-    var originalStep1Frame: CGRect = CGRect.zero
-    var originalStep2Frame: CGRect = CGRect.zero
-    var movementAmount: CGFloat {
-        return UIScreen.main.bounds.height / 4
-    }
     
     
     override func viewDidLoad() {
@@ -60,35 +63,15 @@ class ViewController: UIViewController {
 
     func panningBegan() {
         guard !(viewAnimator?.isRunning ?? false) else { return }
-        if originalStep1Frame == CGRect.zero {
-            originalStep1Frame = step1ImageView.frame
-        }
-        if originalStep2Frame == CGRect.zero {
-            originalStep2Frame = step2ImageView.frame
-        }
-        let step1Opacity: Float
-        let step2Opacity: Float
-        let targetStep1Frame: CGRect
-        let targetStep2Frame: CGRect
-        switch state {
-        case .step1:
-            targetStep1Frame = step1ImageView.frame.offsetBy(dx: 0, dy: -movementAmount)
-            targetStep2Frame = originalStep2Frame
-            step2ImageView.frame = originalStep2Frame.offsetBy(dx: 0, dy: movementAmount)
-            step1Opacity = 0.0
-            step2Opacity = 1.0
-        case .step2:
-            step1Opacity = 1.0
-            step2Opacity = 0.0
-            targetStep1Frame = originalStep1Frame
-            targetStep2Frame = step2ImageView.frame.offsetBy(dx: 0, dy: movementAmount)
-        }
+        step1View.setup(state: .step1)
+        step2View.setup(state: .step2)
+        
+        let step1Showing: Bool = state != .step1
+        let step2Showing: Bool = state != .step2
         
         viewAnimator = UIViewPropertyAnimator(duration: 0.6, dampingRatio: 0.75, animations: {
-            self.step1ImageView.layer.opacity = step1Opacity
-            self.step1ImageView.frame = targetStep1Frame
-            self.step2ImageView.layer.opacity = step2Opacity
-            self.step2ImageView.frame = targetStep2Frame
+            self.step1View.animate(showing: step1Showing)
+            self.step2View.animate(showing: step2Showing)
         })
     }
     
